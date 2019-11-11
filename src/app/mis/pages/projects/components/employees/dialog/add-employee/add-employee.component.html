@@ -1,0 +1,85 @@
+<div class="example-container">
+  <label style="text-align: center">اضافه کردن کارمند</label>
+  <form [formGroup]="orgForm" (ngSubmit)="addNewEmployee(orgForm)">
+    <mat-form-field>
+      <mat-select placeholder="نوعیت کارمند :" (selectionChange)="employeeType($event.value)"  formControlName="employeeType_id">
+        <mat-option value='1' >داخلی</mat-option>
+        <mat-option  value="0" >خارجی</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="اسم  :" formControlName="name">
+    </mat-form-field>
+    <mat-form-field *ngIf="condition">
+        <input matInput placeholder="اسم پدر :" formControlName="fatherName">
+    </mat-form-field>
+    <mat-form-field *ngIf="condition">
+        <input matInput placeholder="نمبر تشخصیه مالیه :" formControlName="TIN">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="وظیفه :" formControlName="job">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="تحصیلات :" formControlName="education">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="تخصص :" formControlName="specialty">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select placeholder="جنسیت :"  formControlName="gender">
+        <mat-option value="male" >مرد</mat-option>
+        <mat-option value="famale" selected>زن</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="معاش :" formControlName="salary">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select placeholder="کشور :"  formControlName="country">
+        <mat-option value="افغانستان" >افغانستان</mat-option>
+        <mat-option value="پاکستان">پاکستان</mat-option>
+        <mat-option value="ایران">ایران</mat-option>
+        <mat-option value="هندوستان">هندوستان</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field *ngIf="condition">
+      <input matInput placeholder="نمبر هویت :" formControlName="identity">
+    </mat-form-field>
+    <mat-form-field *ngIf="notcondition">
+      <input matInput placeholder="نمبر پاسپورت :" formControlName="identity">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select placeholder="ولایت :"  formControlName="province_id">
+        <mat-option  *ngFor="let provinces of province" value="{{provinces.id}}">{{provinces.provinceName}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder=" آغاز قرار داد :" formControlName="contractStartDate">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="ختم قرار داد  :" formControlName="contractEndDate">
+    </mat-form-field>
+    
+    <mat-form-field>
+      <input matInput placeholder="   ملاحظه :" formControlName="remarks">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select placeholder=" سازمان :"  formControlName="organization_id">
+        <mat-option *ngFor="let org of organization" value="{{org.id}}" >{{org.nameDa}}{{org.nameEn}}</mat-option>
+      </mat-select>
+    </mat-form-field>  
+    
+    <input type="file" id="photo" formControlName="photo" (change)="selectFile($event)">
+    <!-- <mat-form-field>
+      <textarea matInput placeholder="Textarea" formControlName=""></textarea>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-select placeholder="Select" formControlName="gender">
+        <mat-option value="option">Option</mat-option>
+      </mat-select>
+    </mat-form-field> -->
+    <button  type="submit" mat-raised-button large color="primary" align="center" >زخیره</button>
+  </form>
+</div>
+

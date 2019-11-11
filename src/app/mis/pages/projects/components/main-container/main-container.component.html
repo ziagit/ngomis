@@ -1,0 +1,234 @@
+<mat-horizontal-stepper linear labelPosition="bottom" #stepper>
+    <mat-step [stepControl]="firstFormGroup" [optional]="!isOptional">
+  
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel matTooltip="معلومات عمومی پروژه: موقعیت تمویل کننده ها">مرحله اول</ng-template>
+        <mat-radio-group aria-label="Select an option">
+          <mat-radio-button value="1" color="primary" class="font">خارجی</mat-radio-button>
+          <mat-radio-button value="2" color="primary" class="font">داخلی</mat-radio-button>
+        </mat-radio-group>
+        <mat-form-field>
+          <input matInput placeholder="نام موسسه" formControlName="ngoNameDari" required>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="نام موسسه" formControlName="ngoNameEnglish" required>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="نام موسسه" formControlName="shortName" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperNext>بعدی</button>
+        </div>
+      </form>
+  
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup" [optional]="!isOptional">
+  
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>مرحله دوم</ng-template>
+        <mat-form-field>
+          <textarea matInput placeholder="اهداف" formControlName="secondCtrl" required></textarea>
+        </mat-form-field>
+        <mat-form-field>
+          <textarea matInput placeholder="اهداف" formControlName="secondCtrl" required></textarea>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="اهداف" formControlName="secondCtrl" required>
+        </mat-form-field>
+        <section class="example-section">
+          <section class="example-section">
+            <mat-checkbox color="primary" required class="font">تعلیم تربیه</mat-checkbox>
+            <mat-checkbox color="primary" required class="font">تعلیم تربیه</mat-checkbox>
+            <mat-checkbox color="primary" required class="font">تعلیم تربیه</mat-checkbox>
+            <mat-checkbox color="primary" required class="font">تعلیم تربیه</mat-checkbox>
+            <mat-checkbox color="primary" required class="font">تعلیم تربیه</mat-checkbox>
+            <mat-checkbox color="primary" required class="font">تعلیم تربیه</mat-checkbox>
+          </section>
+        </section>
+        <div>
+          <button mat-button matStepperPrevious>قبلی</button>
+          <button mat-button matStepperNext>بعدی</button>
+        </div>
+      </form>
+  
+    </mat-step>
+    <mat-step [stepControl]="thirdFormGroup" [optional]="!isOptional">
+  
+      <form [formGroup]="thirdFormGroup">
+          <ng-template matStepLabel>مرحله سوم</ng-template>
+          <mat-accordion>
+              <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    آدرس موسسه
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-form-field class="w49">
+                  <input matInput formControlName="thirdCtrl" placeholder="First name" required>
+                </mat-form-field>
+                <mat-form-field class="w49">
+                  <input matInput formControlName="thirdCtrl" placeholder="First name" required>
+                </mat-form-field>
+                <mat-form-field class="w49">
+                  <input matInput formControlName="thirdCtrl" placeholder="First name" required>
+                </mat-form-field>
+                <mat-form-field class="w49">
+                  <input matInput formControlName="thirdCtrl" placeholder="First name" required>
+                </mat-form-field>
+                <mat-form-field class="w49">
+                  <input matInput formControlName="thirdCtrl" placeholder="First name" required>
+                </mat-form-field>
+                <mat-form-field class="w49">
+                  <input matInput formControlName="thirdCtrl" placeholder="First name" required>
+                </mat-form-field>
+                <mat-form-field class="w49">
+                  <input matInput formControlName="thirdCtrl" placeholder="First name" required>
+                </mat-form-field>
+              </mat-expansion-panel>
+              <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    آدرس موسسه در خارج
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-form-field class="w49">
+                  <input matInput placeholder="First name" required>
+                </mat-form-field>
+                <mat-form-field class="w49">
+                  <input matInput placeholder="First name" required>
+                </mat-form-field>
+                <mat-form-field class="w49">
+                  <input matInput placeholder="First name" required>
+                </mat-form-field>
+                <mat-form-field class="w49">
+                  <input matInput placeholder="First name" required>
+                </mat-form-field>
+                <mat-form-field class="w49">
+                  <input matInput placeholder="First name" required>
+                </mat-form-field>
+              </mat-expansion-panel>
+            </mat-accordion>
+        <div>
+          <button mat-button matStepperPrevious>قبلی</button>
+          <button mat-button matStepperNext>بعدی</button>
+        </div>
+      </form>
+  
+    </mat-step>
+    <mat-step [stepControl]="fourthFormGroup" [optional]="!isOptional">
+  
+      <form [formGroup]="fourthFormGroup">
+        <ng-template matStepLabel matTooltip="hello">مرحله چهارم</ng-template>
+        <mat-accordion>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                معلومات ریس
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-form-field class="w49">
+              <input matInput formControlName="fourthCtrl" placeholder="First name" required>
+            </mat-form-field>
+            <mat-form-field class="w49">
+              <input matInput formControlName="fourthCtrl" placeholder="First name" required>
+            </mat-form-field>
+            <mat-form-field class="w49">
+              <input matInput formControlName="fourthCtrl" placeholder="First name" required>
+            </mat-form-field>
+            <mat-form-field class="w49">
+              <input matInput formControlName="fourthCtrl" placeholder="First name" required>
+            </mat-form-field>
+            <mat-form-field class="w49">
+              <input matInput formControlName="fourthCtrl" placeholder="First name" required>
+            </mat-form-field>
+            <mat-form-field class="w49">
+              <input matInput formControlName="fourthCtrl" placeholder="First name" required>
+            </mat-form-field>
+            <mat-form-field class="w49">
+              <input matInput formControlName="fourthCtrl" placeholder="First name" required>
+            </mat-form-field>
+            <mat-form-field class="w49">
+              <input matInput formControlName="fourthCtrl" placeholder="First name" required>
+            </mat-form-field>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                معلومات معاوین
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-form-field class="w49">
+              <input matInput placeholder="First name" required>
+            </mat-form-field>
+            <mat-form-field class="w49">
+              <input matInput placeholder="First name" required>
+            </mat-form-field>
+            <mat-form-field class="w49">
+              <input matInput placeholder="First name" required>
+            </mat-form-field>
+            <mat-form-field class="w49">
+              <input matInput placeholder="First name" required>
+            </mat-form-field>
+            <mat-form-field class="w49">
+              <input matInput placeholder="First name" required>
+            </mat-form-field>
+            <mat-form-field class="w49">
+              <input matInput placeholder="First name" required>
+            </mat-form-field>
+            <mat-form-field class="w49">
+              <input matInput placeholder="First name" required>
+            </mat-form-field>
+            <mat-form-field class="w49">
+              <input matInput placeholder="First name" required>
+            </mat-form-field>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                معلومات مسول مالی و اداری
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-form-field class="w49">
+              <input matInput placeholder="First name" required>
+            </mat-form-field>
+            <mat-form-field class="w49">
+              <input matInput placeholder="First name" required>
+            </mat-form-field>
+            <mat-form-field class="w49">
+              <input matInput placeholder="First name" required>
+            </mat-form-field>
+            <mat-form-field class="w49">
+              <input matInput placeholder="First name" required>
+            </mat-form-field>
+            <mat-form-field class="w49">
+              <input matInput placeholder="First name" required>
+            </mat-form-field>
+            <mat-form-field class="w49">
+              <input matInput placeholder="First name" required>
+            </mat-form-field>
+            <mat-form-field class="w49">
+              <input matInput placeholder="First name" required>
+            </mat-form-field>
+            <mat-form-field class="w49">
+              <input matInput placeholder="First name" required>
+            </mat-form-field>
+          </mat-expansion-panel>
+        </mat-accordion>
+        <div>
+          <button mat-button matStepperPrevious>قبلی</button>
+          <button mat-button matStepperNext>بعدی</button>
+        </div>
+      </form>
+  
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>ارسال</ng-template>
+      <p class="last-step">معلومات که ارایه کرده اید آماده ثبت است.</p>
+      <p class="last-step">آیا میخواهید ثبت شود؟</p>
+      <div>
+        <button mat-button matStepperPrevious>قبلی</button>
+        <button mat-button (click)="stepper.reset()">تنظیم مجدد</button>
+        <button mat-button (click)="stepper.reset()">ثبت</button>
+      </div>
+    </mat-step>
+  </mat-horizontal-stepper>

@@ -1,0 +1,65 @@
+<div class="example-container">
+  <label style="text-align: center">اضافه کردن پروژه</label>
+  <form [formGroup]="orgForm" (ngSubmit)="addProjectFunction(orgForm)">
+    
+    <mat-form-field>
+      <input matInput placeholder="کود پروژه :" formControlName="projectCode">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="نام پروژه" formControlName="projectName">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="قمت پروژه" formControlName="projectPrice">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select placeholder="بودجه"  formControlName="budjet_id">
+        <mat-option *ngFor="let buj of budjet" value="{{buj.id}}" >{{buj.type}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    
+    <mat-form-field>
+        <input matInput placeholder="اداره دولتی :" formControlName="govDirectorate">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-select placeholder="ولایت"  formControlName="province_id">
+          <mat-option *ngFor="let pro of province" value="{{pro.id}}" >{{pro.provinceName}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-select placeholder="ولسوالی"  formControlName="district_id">
+          <mat-option *ngFor="let dist of district" value="{{dist.id}}" >{{dist.districtName}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+          <input matInput placeholder="تاریخ شروع پروژه :" formControlName="projectStartDate">
+      </mat-form-field> 
+      <mat-form-field>
+          <input matInput placeholder="تاریخ ختم پروژه :" formControlName="projectEndDate">
+      </mat-form-field> 
+      <mat-form-field>
+          <input matInput placeholder="حالت پروژه :" formControlName="projectStatus">
+      </mat-form-field> 
+      <mat-form-field>
+        <mat-select placeholder="سکتور" formControlName="sector_id">
+          <mat-option *ngFor="let sectors of sector"  value="{{sectors.id}}"  >{{sectors.sectorName}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-select placeholder="موءسسه"  formControlName="organization_id">
+          <mat-option *ngFor="let org of organization" value="{{org.id}}" >
+            {{org.nameDa}}" "{{org.nameEn}}</mat-option>
+        </mat-select>
+      </mat-form-field>   
+    <!-- <mat-form-field>
+      <textarea matInput placeholder="Textarea" formControlName=""></textarea>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-select placeholder="Select" formControlName="gender">
+        <mat-option value="option">Option</mat-option>
+      </mat-select>
+    </mat-form-field> -->
+    <button  type="submit" mat-raised-button large color="primary" align="center" >زخیره</button>
+  </form>
+</div>
+

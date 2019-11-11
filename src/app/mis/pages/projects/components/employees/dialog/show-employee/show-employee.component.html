@@ -1,0 +1,73 @@
+<div align="end">
+<a class="btn btn-primary" routerLink="/pages/projects/employees"><i class="fa fa-reply">برگشت</i></a>
+</div>
+<mat-grid-list  cols="5" rowHeight="100px">
+    <mat-grid-tile>
+      <h4>اسم :</h4>&nbsp;
+      <p >{{showresult?.name}}</p>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <h4>اسم پدر :</h4>
+        <p>{{showresult?.fatherName}}</p>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <h4>نمبر مالیه :</h4>
+      <p>{{showresult?.TIN}}</p>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <h4>وظیفه :</h4>
+        <p> {{showresult?.job}}</p>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <h4>تحصیلات :</h4>
+        <p>{{showresult?.education}} </p>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <h4>تخصص :</h4>
+        <p>{{showresult?.specialty}} </p>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <h4>جنسیت :</h4>
+        <p>{{showresult?.gender}} </p>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <h4>معاش :</h4>
+        <p>{{showresult?.salary}} </p>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <h4>کشور :</h4>
+        <p>{{showresult?.country}} </p>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <h4>نمبر هویت :</h4>
+        <p> {{showresult?.identity}}</p>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <h4>ولایت :</h4>
+        <p>{{showresult?.province?.provinceName}} </p>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <h4>شروع قرار داد :</h4>
+        <p>{{showresult?.contractStartDate}} </p>>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <h4>تاریخ ختم :</h4>
+        <p> {{showresult?.contractEndDate}}</p>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <h4>نوعیت کارمند :</h4>
+        <p> داخلی</p>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <h4>ملاحظه :</h4>
+        <p> {{showresult?.remarks}}</p>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <h4>موئسسه :</h4>
+        <p>{{showresult?.organization?.nameDa}} </p>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <h4>عکس :</h4>
+        <p><img src="http://localhost:8000/uploads/employee/{{showresult?.photo}}" width="100px;"></p>
+    </mat-grid-tile>
+  </mat-grid-list>

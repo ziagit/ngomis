@@ -1,0 +1,37 @@
+
+<div class="example-container">
+  
+  <form [formGroup]="accountForm" (ngSubmit)="addAccount()">
+      <mat-form-field>
+          <mat-select placeholder="انتخاب موسسه" formControlName="organization_id">
+            <mat-option value="{{org.id}}" *ngFor = "let org of organization_id ">{{org.nameDa}}</mat-option>
+          </mat-select>
+        </mat-form-field> 
+        <mat-form-field>
+            <mat-select placeholder="انتخاب پروژه" formControlName="project_id">
+              <mat-option value="{{pro.id}}" *ngFor = "let pro of project_id ">{{pro.projectName}}</mat-option>
+            </mat-select>
+          </mat-form-field> 
+          <mat-form-field>
+            <mat-select placeholder="انتخاب افراد کلیدی" formControlName="keyspersonnel_id">
+              <mat-option value="{{keysper.id}}"  *ngFor = "let keysper of keyspersonnel_id ">{{keysper.name}}</mat-option>
+            </mat-select>
+          </mat-form-field> 
+          <mat-form-field>
+           <input matInput placeholder="نام" formControlName="name">
+           </mat-form-field>
+          <mat-form-field>
+          <input matInput placeholder="موقعیت" formControlName="location">
+          </mat-form-field>
+          <mat-form-field>
+              <mat-select placeholder="انتخاب واحد پولی" formControlName="currency">
+                  <mat-option value="option">Option</mat-option>
+                  <mat-option value="دالر">دالر</mat-option>
+                  <mat-option value="افعانی">افعانی</mat-option>
+                </mat-select>
+           </mat-form-field>
+          <button mat-raised-button color="primary"type="submit" style="float:left;">ذخیره</button>
+        
+  </form>
+</div>
+

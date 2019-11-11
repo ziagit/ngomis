@@ -1,0 +1,8 @@
+<label>آیا شما میخواهید حذف شود یانه?</label>
+<i class="fa fa-warning fa-fw"></i><br>
+<form [formGroup]="deleteAccountForm" (ngSubmit)="deleteAccount()">
+<div class="actions">
+<button type="button" mat-raised-button large color="primary" (click)="deleteAccount(elem)">بلی</button>
+<button type="button" mat-raised-button large color="primary" (click)="closeDelete()">نخیر</button>
+</div>
+</form>

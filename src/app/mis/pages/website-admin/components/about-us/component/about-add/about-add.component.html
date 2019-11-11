@@ -1,0 +1,45 @@
+<form [formGroup]="aboutForm" (submit)="addAbout($event)">
+
+<mat-grid-list cols="3" rowHeight="2:1">
+  <mat-grid-tile>
+    <mat-form-field>
+      <input matInput formControlName="titleDa" placeholder="عنوان" >
+    </mat-form-field>
+  </mat-grid-tile>  
+
+  <mat-grid-tile>
+    <mat-form-field>
+      <input matInput formControlName="titleEn" placeholder="Title">
+    </mat-form-field>
+  </mat-grid-tile>
+
+  <mat-grid-tile>
+    <mat-form-field>
+      <input matInput formControlName="titlePa" placeholder="پشتو">
+    </mat-form-field>
+  </mat-grid-tile>
+
+   <mat-grid-tile>
+    <mat-form-field>
+     <textarea matInput formControlName="descriptionDa" placeholder="توضیحات"></textarea>
+    </mat-form-field>
+  </mat-grid-tile>
+
+  <mat-grid-tile>
+    <mat-form-field>
+      <textarea matInput  formControlName="descriptionEn" placeholder="description"></textarea>
+    </mat-form-field>
+  </mat-grid-tile>
+
+  <mat-grid-tile>
+    <mat-form-field>
+      <textarea matInput  formControlName="descriptionPa" placeholder="پشتو توضیحات"></textarea>
+    </mat-form-field>
+  </mat-grid-tile>
+ 
+</mat-grid-list>
+<button mat-raised-button >ذخیره</button>
+
+</form>
+
+

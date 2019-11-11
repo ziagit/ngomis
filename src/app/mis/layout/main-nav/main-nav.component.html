@@ -1,0 +1,69 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>
+      <button
+      mat-button
+      [matMenuTriggerFor]="usermenu">
+      <mat-icon>account_box</mat-icon>
+    </button>
+    <mat-menu #usermenu="matMenu">
+      <button mat-menu-item> ورود به سیستم</button>
+      <button mat-menu-item> خروج از سیستم</button>
+    </mat-menu>
+    </mat-toolbar>
+    <mat-nav-list>
+      <a
+        *ngFor="let item of menu"
+        class="mainmenu"
+        routerLink="{{item.path}}">
+        <div class="main-title">
+          <div class="title-icon">
+            <mat-icon>{{item.icon}}</mat-icon>
+            <span>{{item.title}}</span>
+          </div>
+          <mat-icon *ngIf="item.children" [ngClass]="item.children ? 'arrow':''">keyboard_arrow_left</mat-icon>
+        </div>
+        <ul
+          class="sub-menu"
+          *ngIf="item.children">
+          <li *ngFor="let sub of item.children">
+            <a routerLink="{{sub.path}}">{{sub.title}}</a></li>
+        </ul>
+      </a>
+    </mat-nav-list>
+
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>NGO MIS</span>
+      <span class="spacer"></span>
+
+      <button
+        mat-button
+        [matMenuTriggerFor]="afterMenu">
+        <mat-icon>list</mat-icon>
+      </button>
+      <mat-menu #afterMenu="matMenu">
+        <button mat-menu-item> <mat-icon>build </mat-icon>تنظیمات</button>
+        <button mat-menu-item> <mat-icon>notifications </mat-icon>تذکر</button>
+      </mat-menu>
+    </mat-toolbar>
+    <div class="router-container">
+    <router-outlet></router-outlet>
+  </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

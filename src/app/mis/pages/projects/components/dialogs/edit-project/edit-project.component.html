@@ -1,0 +1,54 @@
+<div class="example-container">
+    <form [formGroup]="orgForm" (ngSubmit)="updateProject(orgForm)">
+      
+      <mat-form-field>
+        <input matInput placeholder="کود پروژه :"  formControlName="projectCode" >
+      </mat-form-field>
+      <mat-form-field>
+          <input matInput placeholder="نام پروژه" formControlName="projectName">
+      </mat-form-field>
+      <mat-form-field>
+          <input matInput placeholder="قمت پروژه" formControlName="projectPrice">
+      </mat-form-field>
+      <mat-form-field>
+          <input matInput placeholder="budjet_id" formControlName="budjet_id">
+      </mat-form-field>
+      <mat-form-field>
+          <input matInput placeholder="اداره دولتی :" formControlName="govDirectorate">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Input" formControlName="province_id">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Input" formControlName="district_id">
+        </mat-form-field> 
+        <mat-form-field>
+            <input matInput placeholder="تاریخ شروع پروژه :" formControlName="projectStartDate">
+        </mat-form-field> 
+        <mat-form-field>
+            <input matInput placeholder="تاریخ ختم پروژه :" formControlName="projectEndDate">
+        </mat-form-field> 
+        <mat-form-field>
+            <input matInput placeholder="حالت پروژه :" formControlName="projectStatus">
+        </mat-form-field> 
+        <mat-form-field>
+            <input matInput placeholder="Input" formControlName="sector_id">
+        </mat-form-field> 
+        <mat-form-field>
+            <input matInput placeholder="Input" formControlName="organization_id">
+        </mat-form-field>    
+      <!-- <mat-form-field>
+        <textarea matInput placeholder="Textarea" formControlName=""></textarea>
+      </mat-form-field>
+  
+      <mat-form-field>
+        <mat-select placeholder="Select" formControlName="gender">
+          <mat-option value="option">Option</mat-option>
+        </mat-select>
+      </mat-form-field> -->
+      <button  type="submit" mat-raised-button large color="primary" align="center" >زخیره</button>
+      <button  type="button" mat-raised-button large (click)="closeDialog()" align="center" >بستن</button>
+    </form>
+  </div>
+  
+  

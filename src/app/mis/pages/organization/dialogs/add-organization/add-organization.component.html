@@ -1,0 +1,59 @@
+<div class="example-container">
+  <form [formGroup]="orgForm" (ngSubmit)="onSubmitOrgnizationForm(orgForm)">
+    
+    <mat-form-field>
+      <input matInput placeholder="نام دری " formControlName="nameDa">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="نام انگلیسی" formControlName="nameEn" [(ngModel)] ="nameEn ">
+    </mat-form-field>
+    
+    <mat-form-field>
+      <input matInput placeholder="اختصار نام " formControlName="abrivation">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>انتخاب نوعیت موسسه </mat-label>
+    <mat-select placeholder="موسسه انتخاب"  formControlName="organizationtype_id">
+        
+      <mat-option *ngFor="let org of organizationtype_id" [value]="org.id" >{{org.orgType}}</mat-option> 
+      
+    </mat-select>
+  </mat-form-field>
+  
+    <mat-form-field>
+      <input matInput placeholder="نمبر راجستر" formControlName="registerNo">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="تاریخ راجستر" formControlName="registerDate">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="شماره تماس" formControlName="contactNo">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder=" ایمل آدرس" formControlName="email">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="آهداف" formControlName="goals">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder=" دارایی نقدی موسسه " formControlName="currentCashAmount">
+    </mat-form-field>
+
+   
+    <mat-form-field>
+      <input matInput placeholder="واحد پول " formControlName="currency">
+    </mat-form-field>
+
+  
+
+    <button mat-button type="submit">Submit</button>
+  </form>
+</div>
+

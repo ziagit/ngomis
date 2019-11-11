@@ -1,0 +1,95 @@
+
+<div align="end">
+    <button mat-raised-button color="primary" (click)="openDialog()">اضافه کردن</button>
+    <button mat-raised-button color="primary" (click)="openStepper()">Add stepper</button>
+  </div>
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field>
+  <div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 table-responsive" class="table table-bordered table-hover ">
+  
+    <!-- id Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> شماره مسلسل. </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="projectCode">
+      <th mat-header-cell *matHeaderCellDef> کود پروژه </th>
+      <td mat-cell *matCellDef="let element"> {{element.projectCode}} </td>
+    </ng-container>
+  
+    <!-- projectName Column -->
+    <ng-container matColumnDef="projectName">
+      <th mat-header-cell *matHeaderCellDef> نام پروژه </th>
+      <td mat-cell *matCellDef="let element"> {{element.projectName}} </td>
+    </ng-container>
+  
+    <!-- projectPrice Column -->
+    <ng-container matColumnDef="projectPrice">
+      <th mat-header-cell *matHeaderCellDef> قمت پروژه </th>
+      <td mat-cell *matCellDef="let element"> {{element.projectPrice}} </td>
+    </ng-container>
+    <!-- projectPrice Column -->
+    <ng-container matColumnDef="budjet_id">
+      <th mat-header-cell *matHeaderCellDef> budjet_id </th>
+      <td mat-cell *matCellDef="let element"> {{element.budjet_id}} </td>
+    </ng-container>
+    <!-- govDirectorate Column -->
+    <ng-container matColumnDef="govDirectorate">
+      <th mat-header-cell *matHeaderCellDef> govDirectorate </th>
+      <td mat-cell *matCellDef="let element"> {{element.govDirectorate}} </td>
+    </ng-container>
+    <!-- province_id Column -->
+    <ng-container matColumnDef="province_id">
+      <th mat-header-cell *matHeaderCellDef> province_id </th>
+      <td mat-cell *matCellDef="let element"> {{element.province_id}} </td>
+    </ng-container>
+    <!-- district_id Column -->
+    <ng-container matColumnDef="district_id">
+      <th mat-header-cell *matHeaderCellDef> district_id </th>
+      <td mat-cell *matCellDef="let element"> {{element.district_id}} </td>
+    </ng-container>
+    <!-- projectStartDate Column -->
+    <ng-container matColumnDef="projectStartDate">
+      <th mat-header-cell *matHeaderCellDef> تاریخ شروع  </th>
+      <td mat-cell *matCellDef="let element"> {{element.projectStartDate}} </td>
+    </ng-container>
+    <!-- projectEndDate Column -->
+    <ng-container matColumnDef="projectEndDate">
+      <th mat-header-cell *matHeaderCellDef> تاریخ ختم </th>
+      <td mat-cell *matCellDef="let element"> {{element.projectEndDate}} </td>
+    </ng-container>
+    <!-- projectStatus Column -->
+    <ng-container matColumnDef="projectStatus">
+      <th mat-header-cell *matHeaderCellDef><B> حالت پروژه</B> </th>
+      <td mat-cell *matCellDef="let element"> {{element.projectStatus}} </td>
+    </ng-container>
+    <!-- sector_id Column -->
+    <ng-container matColumnDef="sector_id">
+      <th mat-header-cell *matHeaderCellDef> sector_id </th>
+      <td mat-cell *matCellDef="let element"> {{element.sector_id}} </td>
+    </ng-container>
+    <!-- organization_id Column -->
+    <ng-container matColumnDef="organization_id">
+      <th mat-header-cell *matHeaderCellDef> organization_id </th>
+      <td mat-cell *matCellDef="let element"> {{element.organization_id}} </td>
+    </ng-container>
+    <!-- option Column -->
+    <ng-container matColumnDef="option">
+      <th mat-header-cell *matHeaderCellDef> option </th>
+      <td mat-cell *matCellDef="let element">
+         <a mat-raised-button><i class="fa fa-trash" style="color: red;" (click)="deleteProject(element)"></i></a> 
+         <a mat-raised-button ><i class="fa fa-edit" (click)="editProject(element)"></i></a>
+        </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+   
+  </table>
+  
+  <mat-paginator [pageSizeOptions]="[5, 10, 20,100]" showFirstLastButtons></mat-paginator>
+  </div>

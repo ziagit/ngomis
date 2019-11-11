@@ -1,0 +1,82 @@
+.sidenav-container {
+  height: 100%;
+  overflow: hidden;
+}
+mat-sidenav-content{
+  overflow: hidden;
+}
+.router-container{
+  overflow-y: auto !important;
+}
+.sidenav {
+  width: 200px;
+  box-shadow: 3px 0 6px rgba(0, 0, 0, 1);
+}
+
+.sidenav .mat-toolbar {
+  background: #3f51b5;
+  color: #fff;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.spacer {
+  flex: 1 1 auto;
+}
+mat-toolbar a {
+  display: inline-block;
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+}
+.mat-toolbar mat-icon{
+  font-size: 40px;
+  line-height: 25px;
+  margin: auto;
+}
+
+.mainmenu {
+  display: block !important;
+}
+.main-title{
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+.title-icon{
+  display: flex;
+}
+.title-icon mat-icon{
+  margin-left: 5px;
+  font-size: 18px;
+}
+
+.sub-menu {
+  height: 0px;
+  margin: 0;
+  transition: height .5s;
+  overflow: hidden;
+  padding: 0;
+}
+.sub-menu li {
+  list-style: none;  
+  padding-right: 30px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.sub-menu li:hover{
+  background-color: rgb(231, 227, 225);
+}
+.mainmenu:hover {
+  background-color: rgb(245, 242, 241);
+}
+.mainmenu:hover .sub-menu {
+  height: 150px;
+}
+.mainmenu:hover .arrow{
+  transform: rotate(-90deg);
+}
